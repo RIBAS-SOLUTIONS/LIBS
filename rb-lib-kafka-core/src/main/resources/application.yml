@@ -1,0 +1,15 @@
+micronaut:
+  application:
+    name: rb-lib-kafka-core
+
+kafka:
+  bootstrap:
+    servers: ${KAFKA_BOOTSTRAP_SERVERS:`localhost:9092`}
+  client:
+    id: ${KAFKA_CLIENT_ID:`rb-kafka-client`}
+  consumer:
+    auto-offset-reset: ${KAFKA_AUTO_OFFSET_RESET:`earliest`}
+    key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    value-deserializer: com.ribas.kafka.config.ProtobufKafkaDeserializer
+
+
